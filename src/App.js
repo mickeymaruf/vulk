@@ -11,7 +11,7 @@ function App() {
       element: <Main />,
       children: [
         {path: '/', element: <Home />},
-        {path: 'products', element: <Products />},
+        {path: 'products', loader: () => fetch('https://openapi.programming-hero.com/api/phones?search=iphone'), element: <Products />},
         {path: 'pricing', element: <Pricing />},
       ]
     },
