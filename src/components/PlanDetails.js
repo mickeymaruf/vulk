@@ -12,8 +12,8 @@ const PlanDetails = () => {
     const ourPlan = plans.find(plan => plan.id === +_id);
     const { id, name, price, icon, desc, benifits, features } = ourPlan;
     return (
-        <section className='bg-slate-900 text-white min-h-screen p-20 grid grid-cols-3 items-start gap-10'>
-            <div className="border border-indigo-500 rounded-lg p-5 py-8 col-span-2 flex items-center">
+        <section className='bg-slate-900 text-white min-h-screen p-20 lg:grid grid-cols-3 items-start gap-10'>
+            <div className="border border-indigo-500 rounded-lg mb-5 lg:mb-0 p-5 py-8 col-span-2 flex items-center">
                 <img className='w-16' src={icon} alt="" />
                 <div className='ml-5'>
                     <h3 className='text-xl font-medium'>{name}</h3>
