@@ -4,12 +4,67 @@ import planning2 from '../images/planning-2.svg'
 import planning3 from '../images/planning-3.svg'
 import Plan from './Plan';
 
+export const plans = [
+    {
+        id: 1,
+        name: 'Growth',
+        price: 250,
+        icon: planning1,
+        desc: 'Under $10,000 in monthly ad spend',
+        benifits: [
+            'Access to slack community',
+            'Access to support team',
+            'Algorithmic bidding',
+            'Keyword and ASIN harvesting',
+        ],
+        features: [
+            'Search term isolation',
+            'Total sales analytics',
+            'Best seller rank',
+            'Placement optimization',
+        ],
+    },
+    {
+        id: 2,
+        name: 'Business',
+        price: 500,
+        icon: planning2,
+        desc: 'Over $20,000 in monthly ad spend',
+        benifits: [
+            'All features in Growth',
+            '3 week checkpoint call',
+            '6 week checkpoint call',
+            'Quarterly account assessment',
+        ],
+        features: [
+            'Google Ads integration',
+            'Automated rules and strategies',
+            'Brand analytics',
+            'Competitor intelligence',
+        ],
+    },
+    {
+        id: 3,
+        name: 'Enterprise',
+        price: 1250,
+        icon: planning3,
+        desc: 'Under $30,000 in monthly ad spend',
+        benifits: [
+            'All features in Business',
+            'Strategic Partner Manager',
+            'Quarterly Business Review',
+            'Yearly Account Planning',
+        ],
+        features: [
+            'Amazon DSP instance',
+            'Amazon Marketing Cloud',
+            'Datalake integration',
+            'Custom dashboard',
+        ],
+    },
+];
+
 const Pricing = () => {
-    const plans = [
-        {id: 1, name: 'Growth', price: 250, icon: planning1},
-        {id: 2, name: 'Business', price: 500, icon: planning2},
-        {id: 3, name: 'Enterprise', price: 1250, icon: planning3},
-    ]
     return (
         <section className='bg-slate-900 text-white'>
             <div className="text-center pt-10">
