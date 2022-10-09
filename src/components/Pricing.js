@@ -64,6 +64,8 @@ export const plans = [
     },
 ];
 
+
+
 const Pricing = () => {
     return (
         <section className='bg-slate-900 text-white'>
