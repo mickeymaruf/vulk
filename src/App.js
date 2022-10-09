@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
+import NotFound from "./components/NotFound";
 import Pricing from "./components/Pricing";
 import Products from "./components/Products";
 import Main from "./layouts/Main";
@@ -15,6 +16,10 @@ function App() {
         {path: 'pricing', element: <Pricing />},
       ]
     },
+    {
+      path: '*',
+      element: <NotFound />
+    }
   ])
   return (
     <div className="App">
