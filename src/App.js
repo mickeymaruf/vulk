@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
+import Pricing from "./components/Pricing";
 import Products from "./components/Products";
 import Main from "./layouts/Main";
 
@@ -11,6 +12,7 @@ function App() {
       children: [
         {path: '/', element: <Home />},
         {path: 'products', element: <Products />},
+        {path: 'pricing', element: <Pricing />},
       ]
     },
   ])

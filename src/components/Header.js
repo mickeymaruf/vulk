@@ -9,7 +9,7 @@ const Header = () => {
                 <Link to="/"><img className='w-10' src={logo} alt="logo" /></Link>
                 <div className='text-white font-medium flex gap-8'>
                     <NavLink to="/products">Product</NavLink>
-                    <NavLink to="">Pricing</NavLink>
+                    <NavLink to="/pricing">Pricing</NavLink>
                     <NavLink to="">Company</NavLink>
                     <NavLink to="">Resources</NavLink>
                 </div>
