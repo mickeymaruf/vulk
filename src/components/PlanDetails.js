@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import { TrialContext } from '../App';
 
 const PlanDetails = () => {
-    const {trial, setTrial, planId, setPlanId} = useContext(TrialContext);
+    const { trial, setTrial, planId, setPlanId } = useContext(TrialContext);
     const _id = useLoaderData();
     const ourPlan = plans.find(plan => plan.id === +_id);
     const { id, name, price, icon, desc, benifits, features } = ourPlan;

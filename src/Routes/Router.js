@@ -6,6 +6,7 @@ import PlanDetails from "../components/PlanDetails";
 import Pricing from "../components/Pricing";
 import Register from "../components/Register";
 import Main from "../layouts/Main";
+import PrivateRoute from "./PrivateRoute";
 import RestrictLoginUser from "./RestrictLoginUser";
 
 export const router = createBrowserRouter([
@@ -15,7 +16,7 @@ export const router = createBrowserRouter([
         children: [
             { path: '/', element: <Home /> },
             { path: 'pricing', element: <Pricing /> },
-            { path: 'pricing/:id', loader: ({ params }) => params.id, element: < PlanDetails /> },
+            { path: 'pricing/:id', loader: ({ params }) => params.id, element: <PrivateRoute><PlanDetails /></PrivateRoute> },
             // firebase
             { path: 'login', element: <RestrictLoginUser><Login /></RestrictLoginUser> },
             { path: 'register', element: <RestrictLoginUser><Register /></RestrictLoginUser> },

@@ -1,12 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/UserContext';
 import SocialAuth from './SocialAuth';
 
 const Login = () => {
     const [error, setError] = useState(null);
-    const { loginUser} = useAuth();
+    const { loginUser } = useAuth();
+    const location = useLocation();
+    const from = location.state?.from?.pathname;
+    const navigate = useNavigate();
+
     const handleLogin = (e) => {
         setError(null);
         e.preventDefault();
@@ -15,12 +19,12 @@ const Login = () => {
         const password = form.password.value;
         loginUser(email, password)
             .then(result => {
-                // 
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 setError(err.message)
             })
-        }
+    }
 
     return (
         <div className="hero min-h-screen bg-slate-900">
