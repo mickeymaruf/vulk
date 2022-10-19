@@ -14,9 +14,10 @@ const Header = () => {
                 <Link to="/"><img className='w-10' src={logo} alt="logo" /></Link>
                 <div className={`text-white text-lg md:text-base font-medium flex gap-5 md:gap-8 flex-col md:flex-row z-50 bg-slate-700 backdrop-blur-md bg-opacity-70 md:bg-inherit fixed md:static right-0 ${toggle ? 'top-20' : '-top-[350px]'} w-full items-center justify-center px-16 py-5 md:p-0 rounded-lg md:ml-2 duration-300`}>
                     <NavLink className='hover:text-indigo-400'>Product</NavLink>
-                    <NavLink className='hover:text-indigo-400' to="/pricing">Pricing</NavLink>
+                    <NavLink to="/pricing" className='hover:text-indigo-400'>Pricing</NavLink>
                     <NavLink className='hover:text-indigo-400'>Company</NavLink>
-                    <NavLink className='hover:text-indigo-400'>Resources</NavLink>
+                    <NavLink to="/resources" className='hover:text-indigo-400'>Resources</NavLink>
+                    <NavLink to="/profile" className='hover:text-indigo-400'>Profile</NavLink>
                     {
                         user && user.uid ?
                             <button onClick={logOut} className='ml-0 md:ml-auto bg-indigo-500 py-3 px-6 rounded-lg text-white font-medium hover:shadow-lg hover:shadow-slate-700'>Logout</button>

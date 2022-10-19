@@ -1,7 +1,7 @@
 import React from 'react';
-import planning1 from '../images/planning-1.svg'
-import planning2 from '../images/planning-2.svg'
-import planning3 from '../images/planning-3.svg'
+import planning1 from '../assets/planning-1.svg'
+import planning2 from '../assets/planning-2.svg'
+import planning3 from '../assets/planning-3.svg'
 import Plan from './Plan';
 
 export const plans = [
