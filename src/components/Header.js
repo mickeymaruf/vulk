@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../logo.svg'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
+import { useAuth } from '../contexts/UserContext';
 
 const Header = () => {
+    const { user, logOut } = useAuth();
     const [toggle, setToggle] = useState(false);
     const navigate = useNavigate();
     return (
@@ -15,7 +17,12 @@ const Header = () => {
                     <NavLink className='hover:text-indigo-400' to="/pricing">Pricing</NavLink>
                     <NavLink className='hover:text-indigo-400'>Company</NavLink>
                     <NavLink className='hover:text-indigo-400'>Resources</NavLink>
-                    <button onClick={() => navigate('/login')} className='ml-0 md:ml-auto bg-indigo-500 py-3 px-6 rounded-lg text-white font-medium hover:shadow-lg hover:shadow-slate-700'>Login</button>
+                    {
+                        user && user.uid ?
+                            <button onClick={logOut} className='ml-0 md:ml-auto bg-indigo-500 py-3 px-6 rounded-lg text-white font-medium hover:shadow-lg hover:shadow-slate-700'>Logout</button>
+                            :
+                            <button onClick={() => navigate('/login')} className='ml-0 md:ml-auto bg-indigo-500 py-3 px-6 rounded-lg text-white font-medium hover:shadow-lg hover:shadow-slate-700'>Login</button>
+                    }
                 </div>
                 <div className='ml-auto'>
                     <div className='absolute top-0 right-0 md:hidden' onClick={() => setToggle(!toggle)}>
