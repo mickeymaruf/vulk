@@ -15,6 +15,10 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+        if (!email || !password) {
+            toast.warn('Field can\' be empty!');
+            return;
+        }
         loginUser(email, password)
             .then(result => {
                 navigate(from, { replace: true });

@@ -7,6 +7,7 @@ import Pricing from "../components/Pricing";
 import Profile from "../components/Profile";
 import Register from "../components/Register";
 import Resources from "../components/Resources";
+import Wallet from "../components/Wallet";
 import Main from "../layouts/Main";
 import PrivateRoute from "./PrivateRoute";
 import RestrictLoginUser from "./RestrictLoginUser";
@@ -20,11 +21,12 @@ export const router = createBrowserRouter([
             { path: '/', element: <Home /> },
             { path: 'pricing', element: <Pricing /> },
             { path: 'pricing/:id', loader: ({ params }) => params.id, element: <PrivateRoute><PlanDetails /></PrivateRoute> },
-            { path: 'resources', element: <PrivateRoute><RestrictUnverifiedUser><Resources /></RestrictUnverifiedUser></PrivateRoute> },
+            { path: 'resources', element: <Resources /> },
             // firebase
             { path: 'login', element: <RestrictLoginUser><Login /></RestrictLoginUser> },
             { path: 'register', element: <RestrictLoginUser><Register /></RestrictLoginUser> },
             { path: 'profile', element: <PrivateRoute><Profile /></PrivateRoute> },
+            { path: 'wallet', element: <PrivateRoute><RestrictUnverifiedUser><Wallet /></RestrictUnverifiedUser></PrivateRoute> },
         ]
     },
     {

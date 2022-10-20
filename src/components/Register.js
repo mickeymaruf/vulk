@@ -1,11 +1,10 @@
-import { sendEmailVerification, updateProfile } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useAuth } from '../contexts/UserContext';
 import SocialAuth from './SocialAuth';
 
 const Register = () => {
-    const { createUser } = useAuth();
+    const { createUser, updateUser, verifyUser } = useAuth();
     const handleSignUp = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -22,21 +21,27 @@ const Register = () => {
             return;
         }
         createUser(email, password)
-            .then(currentUser => {
-                updateProfile(currentUser.user, { displayName: name })
+            .then(result => {
+                updateUser(name)
                     .then(() => {
                         // 
                     })
                     .catch(error => {
                         toast.error(error.message);
+                        console.log(error.message);
                     })
-                sendEmailVerification(currentUser.user)
+                verifyUser()
                     .then(() => {
-                        toast.warn('An registration link has been sent, verify!');
+                        toast.success('An registration link has been sent, verify!');
+                    })
+                    .catch(error => {
+                        toast.error(error.message);
+                        console.log(error.message);
                     })
             })
             .catch(error => {
                 toast.error(error.message);
+                console.log(error.message);
             })
     }
     return (
